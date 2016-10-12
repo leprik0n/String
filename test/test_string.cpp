@@ -66,7 +66,7 @@ void ctor_novalue()
 {
     String s;
     assert(s.Size() == 0);
-    assert(cmp(s.c_str(),"") == 0);
+    assert(strcmp(s.c_str(),"") == 0);
     cout<<"1_OK"<<endl;
 }
 /*
