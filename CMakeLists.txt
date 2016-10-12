@@ -15,6 +15,6 @@ enable_testing()
 
 set(SOURCES string.cpp)
 
-add_executable(test_string tests/test_string.cpp ${SOURCES})
+add_executable(test_string include/test_string.cpp ${SOURCES})
 
 add_test(NAME ${PROJECT_NAME} COMMAND test_string)
