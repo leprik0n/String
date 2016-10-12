@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <new>
-//#include <cassert>
+#include <cassert>
 #include "string.h"
 using namespace std;
 
