@@ -2,7 +2,7 @@
 #include <stdexcept>
 #include "String.h"
 using namespace std;
-
+//
 int len(const char* s)
 {
     unsigned int k=0;
