@@ -2,10 +2,11 @@
 #include <stdexcept>
 #include <new>
 #include <cassert>
-#include "string.h"
+#include <cstring>
+#include "mystring.h"
 using namespace std;
 
-int len(const char* s)
+/*int len(const char* s)
 {
     unsigned int k=0;
     while(*s++)k++;
@@ -50,7 +51,8 @@ void s_c(char*& lhs, const char rhs)
     s_copy(lhs,ptr);
     delete[]ptr;
 }
-
+*/
+/*
 String c_move(const char*s)
 {
     return String(s);
@@ -59,7 +61,7 @@ String c_move_s(const String& p)
 {
     return p;
 }
-
+*/
 void ctor_novalue()
 {
     String s;
