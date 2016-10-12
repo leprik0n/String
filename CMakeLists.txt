@@ -13,6 +13,8 @@ include_directories(include)
 
 enable_testing()
 
+set(SOURSES include/lib.cpp)
+
 set(SOURCES string.cpp)
 
 add_executable(test_string include/test_string.cpp ${SOURCES})
