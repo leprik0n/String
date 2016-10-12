@@ -1,7 +1,8 @@
 #include <iostream>
 #include <stdexcept>
 #include "string.h"
-#include "lib.h"
+#include <cstring>
+//#include "lib.h"
 using namespace std;
 
 template<typename t>
@@ -31,13 +32,13 @@ String::String(char ch,unsigned int s)
 String::String(const char* s)
     :str{new char[len(s)+1]}
 {
-    s_copy(str,s);
+    strcpy(str,s);
 }
 
 String::String(const String& p)
     :str(new char[len(p.str)+1])
 {
-    s_copy(str,p.str);
+    strcpy(str,p.str);
 }
 
 String::String(String&& other)
@@ -69,7 +70,7 @@ String& String::operator=(String&& other)
 String& String::operator+=(const String& p)
 {
     if(p.str){
-        s_cat(str,p.str);
+        strcat(str,p.str);
     }
     return *this;
 }
@@ -77,7 +78,7 @@ String& String::operator+=(const String& p)
 String& String::operator+=(const char* ss)
 {
     if(ss){
-        s_cat(str,ss);
+        strcat(str,ss);
     }
     return *this;
 }
@@ -85,7 +86,7 @@ String& String::operator+=(const char* ss)
 String&String::operator+=(char suffix)
 {
     if(suffix){
-        s_c(str,suffix);
+        //s_c(str,suffix);
     }
     return *this;
 }
@@ -108,17 +109,17 @@ const char& String::operator[](unsigned int i)const
 
 unsigned int String::Size()
 {
-    return len(str);
+    return strlen(str);
 }
 
 bool operator==(const String& s,const String& p)
 {
-    return cmp(s.str,p.str);
+    return strcmp(s.str,p.str);
 }
 
 bool operator<(const String& p,const String& s)
 {
-    return (len(p.str) < len(s.str))?true:false;
+    return (strlen(p.str) < strlen(s.str))?true:false;
 }
 
 String operator+(const String& p,const String& s)
@@ -153,17 +154,17 @@ bool operator!=(const String& p,const String& s)
 
 bool operator <=(const String& p,const String& s)
 {
-    return (len(p.str) <= len(s.str))?true:false;
+    return (strlen(p.str) <= strlen(s.str))?true:false;
 }
 
 bool operator>(const String& p,const String & s)
 {
-    return(len(p.str) > len(s.str))?true:false;
+    return(strlen(p.str) > strlen(s.str))?true:false;
 }
 
 bool operator >=(const String&p,const String&s)
 {
-    return (len(p.str) >= len(s.str))?true:false;
+    return (strlen(p.str) >= strlen(s.str))?true:false;
 }
 
 ostream& operator<<(ostream& os,const String& p)
