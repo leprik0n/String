@@ -1,12 +1,10 @@
 #include <iostream>
 #include <stdexcept>
 #include <new>
+#include <cassert>
 #include "string.h"
-#include <assert.h>
-#include <cstring>
-#include <string.h>
-//#include "lib.h"
-
+#include "lib.h"
+using namespace std;
 String c_move(const char*s)
 {
     return String(s);
@@ -20,7 +18,7 @@ void ctor_novalue()
 {
     String s;
     assert(s.Size() == 0);
-    assert(std::strcmp(s.c_str(),"") == 0);
+    assert(cmp(s.c_str(),"") == 0);
     cout<<"1_OK"<<endl;
 }
 /*
