@@ -3,7 +3,9 @@
 #include <new>
 #include "string.h"
 #include <assert.h>
-#include "lib.h"
+#include <cstring>
+#include <string.h>
+//#include "lib.h"
 using namespace std;
 
 String c_move(const char*s)
@@ -19,10 +21,10 @@ void ctor_novalue()
 {
     String s;
     assert(s.Size() == 0);
-    assert(cmp(s.c_str(),"") == 0);
+    assert(strcmp(s.c_str(),"") == 0);
     cout<<"1_OK"<<endl;
 }
-
+/*
 void ctor_char()
 {
     String s('a',3);
@@ -202,7 +204,7 @@ void oper_more_equal()
     assert(b == true);
     cout<<"21_OK"<<endl;
 }
-
+*/
 int main()
 {
 
@@ -211,7 +213,7 @@ try
 
 
 ctor_novalue();
-ctor_char();
+/*ctor_char();
 ctor_string();
 ctor_copy();
 ctor_move();
@@ -232,7 +234,7 @@ oper_more();
 oper_less_equal();
 oper_more_equal();
 
-
+*/
 
 }
 
