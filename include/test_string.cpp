@@ -4,6 +4,7 @@
 #include "string.h"
 #include <assert.h>
 #include <cstring>
+#include <string.h>
 using namespace std;
 
 String c_move(const char*s)
