@@ -3,7 +3,7 @@
 #include <new>
 #include <cassert>
 #include "string.h"
-#include "lib.h"
+//#include "lib.h"
 using namespace std;
 String c_move(const char*s)
 {
@@ -18,7 +18,7 @@ void ctor_novalue()
 {
     String s;
     assert(s.Size() == 0);
-    assert(cmp(s.c_str(),"") == 0);
+    assert(strcmp(s.c_str(),"") == 0);
     cout<<"1_OK"<<endl;
 }
 /*
