@@ -1,5 +1,4 @@
-#ifndef STRING_H_
-#define STRING_H_
+#pragma once
 #include <ostream>
 
 class String
@@ -68,5 +67,3 @@ public:
     friend bool operator >=(const String &,const String &);
 
 };
-
-#endif // STRING_H_
