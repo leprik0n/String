@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdexcept>
-#include "string.h"
+#include "mystring.h"
 #include <cstring>
 //#include "lib.h"
 using namespace std;
