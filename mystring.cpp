@@ -30,13 +30,13 @@ String::String(char ch,unsigned int s)
 }
 
 String::String(const char* s)
-    :str{new char[len(s)+1]}
+    :str{new char[strlen(s)+1]}
 {
     strcpy(str,s);
 }
 
 String::String(const String& p)
-    :str(new char[len(p.str)+1])
+    :str(new char[strlen(p.str)+1])
 {
     strcpy(str,p.str);
 }
@@ -93,7 +93,7 @@ String&String::operator+=(char suffix)
 
 char& String::operator[](unsigned int i)
 {
-    if(i >= len(str)){
+    if(i >= strlen(str)){
             throw out_of_range("out_of_range");
     }
     return str[i];
@@ -101,7 +101,7 @@ char& String::operator[](unsigned int i)
 
 const char& String::operator[](unsigned int i)const
 {
-    if(i >= len(str)){
+    if(i >= strlen(str)){
             throw out_of_range("out_of_range");
     }
     return str[i];
